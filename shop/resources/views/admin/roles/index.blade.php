@@ -28,8 +28,11 @@
               {{$v1->name}},
               @endforeach
             </td>
-            <td><a href="{{route('roles.edit',['id'=>$v->id])}}"> <i class="fa fa-edit"></i></a> &nbsp;
+            <td>
+              @if($v->id!==1)
+              <a href="{{route('roles.edit',['id'=>$v->id])}}"> <i class="fa fa-edit"></i></a> &nbsp;
               <a href="javascript:;" class="fa fa-close" onclick="del({{$v->id}},'roles')"></a> </td>
+              @endif
           </tr>
           @endforeach
 

@@ -26,12 +26,20 @@
               <td>{{$v->id}}</td>
               <td>{{$v->username}}</td>
               <td>
-              @foreach($v->roles as $v1)
-              {{$v1->name}},
+              @foreach($v->roles as $k => $v1)
+                @if($k===0)            
+                  {{$v1->name}}
+                @else
+                , {{$v1->name}}
+                @endif
               @endforeach
               </td>
-              <td><a href="{{route('admin.edit',['id'=>$v->id])}}"> <i class="fa fa-edit"></i></a> &nbsp; 
-              <a href="javascript:;" class="fa fa-close" onclick="del({{$v->id}},'admin')"></a>                   
+              <td>
+              @if($v->id !== 1)
+              <a href="{{route('admin.edit',['id'=>$v->id])}}"> <i class="fa fa-edit"></i></a> &nbsp; 
+             
+              <a href="javascript:;" class="fa fa-close" onclick="del({{$v->id}},'admin')"></a>     
+              @endif              
               </td>
             </tr>
             @endforeach

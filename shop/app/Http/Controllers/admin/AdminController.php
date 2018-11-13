@@ -30,7 +30,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $data = Role::all();
+        $data = Role::where('id','>','1')->get();
         return view('admin.admin.create')->with('data',$data);
     }
 
@@ -82,7 +82,7 @@ class AdminController extends Controller
             $_ret[] = $v->id;
         }
 
-        $data = Role::all();
+        $data = Role::where('id','>','1')->get();
         return view('admin.admin.update',[
             'data' => $data,
             'arr'=>$arr,
@@ -114,9 +114,12 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $model = Admin::find($id);
-        $model->roles()->detach();
-        $model->delete();
+        if($id!=='1')
+        {
+            $model = Admin::find($id);
+            $model->roles()->detach();
+            $model->delete();
+        }
         return redirect()->route('admin.index');
     }
 }

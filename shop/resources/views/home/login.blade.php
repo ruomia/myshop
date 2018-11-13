@@ -74,7 +74,7 @@
 										<li><img src="img/weixin.png" /></li>
 									</ul>
 								</div>
-								<span class="register"><a href="register.html" target="_blank">立即注册</a></span>
+								<span class="register"><a href="{{route('register')}}" target="_blank">立即注册</a></span>
 							</div>
 						</div>
 					</div>

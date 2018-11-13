@@ -20,6 +20,7 @@
                   <input type="checkbox" name="permission_id[]" id="" value="{{$v['id']}}"  @if(in_array($v['id'], $ret)) checked @endif>{{str_repeat('-',8*$v['level']) . $v['name']}}<br>
                   @endforeach
                 </div>
+              </div>
               <!-- /.box-body -->
 
               <div class="box-footer">

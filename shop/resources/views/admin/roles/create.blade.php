@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-
+          <div class="box box-default">
             <div class="box-header with-border">
               <h3 class="box-title">添加表单</h3>
             </div>
@@ -20,6 +20,7 @@
                   <input type="checkbox" name="permission_id[]" id="" value="{{$v['id']}}">{{str_repeat('-',8*$v['level']) . $v['name']}}<br>
                   @endforeach
                 </div>
+              </div>
               <!-- /.box-body -->
 
               <div class="box-footer">

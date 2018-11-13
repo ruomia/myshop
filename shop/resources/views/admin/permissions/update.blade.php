@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-
+<div class="box box-default">
             <div class="box-header with-border">
               <h3 class="box-title">修改表单</h3>
             </div>
@@ -27,6 +27,7 @@
                     @endforeach
                   </select>
                 </div>
+              </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
