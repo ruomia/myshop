@@ -112,4 +112,7 @@ Route::get('/alipay','home\AlipayController@pay')->name('alipay');
 Route::get('/alipay/return','home\AlipayController@return');    
 Route::post('/alipay/notify','home\AlipayController@notify');    
 
-Route::get('/wxpay','home\WxpayController@pay')->name('wxpay');    
+Route::get('/wxpay','home\WxpayController@pay')->name('wxpay');  
+
+Route::post('/wxpay/notify','home\AlipayController@notify');    
+

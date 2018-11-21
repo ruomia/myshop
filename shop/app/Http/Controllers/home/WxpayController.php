@@ -9,10 +9,11 @@ use Yansongda\Pay\Pay;
 class WxpayController extends Controller
 {
     protected $config = [
-        'app_id' => 'wx426b3015555a46be', // 公众号 APPID
-        'mch_id' => '1900009851',
-        'key' => '8934e7d15453e97507ef794cf7b0519d',
-        'notify_url' => 'http://requestbin.fullcontact.com/r6s2a1r6',
+        'app_id' => 'wx4cbc0a5a5e78d748', // 公众号 APPID
+        'mch_id' => '1511187271',
+        'key' => '08839714a18fb0130a35ca9073810d2b',
+        // 通知的地址
+        'notify_url' => 'http://shop.huyp.xin/wxpay/notify',
     ];
 
     public function pay(Request $request)
@@ -21,10 +22,9 @@ class WxpayController extends Controller
             'out_trade_no' => time(),
             'total_fee' => '1', // **单位：分**
             'body' => 'test body - 测试',
-            'openid' => 'onkVf1FjWS5SBIixxxxxx1',
         ];
 
-        $pay = Pay::wechat($this->config)->scan($order);
+        $pay = Pay::wechat($this->config)->wap($order);
 
         echo $pay->return_code , '<hr>';
         echo $pay->return_msg , '<hr>';
